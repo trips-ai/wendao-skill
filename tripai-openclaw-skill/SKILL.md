@@ -122,7 +122,7 @@ fi
 
 ```bash
 jq -n --arg token "$TRIPAI_API_KEY" --arg query "$USER_QUERY" \
-  '{token: $token, query: $query, source: "github"}' \
+  '{token: $token, query: $query, source: "clawhub"}' \
   | curl -s -X POST https://wendao-skill-prod.ctrip.com/skill/query -H "Content-Type: application/json" -d @-
 ```
 

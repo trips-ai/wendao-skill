@@ -65,7 +65,7 @@ cp -r tripai-skill/ ~/.openclaw/workspace/skills/tripai-skill
 ### 2. API Key Acquisition
 
 - **For TripGenie**: Obtain your API key from [www.trip.com/tripgenie/openclaw](https://www.trip.com/tripgenie/openclaw). *(Required)*
-- **For TripAI**: Obtain your API key from [www.ctrip.com/wendao/openclaw](https://www.ctrip.com/wendao/openclaw). *(Optional — works without a key, but requests may be rate-limited)*
+- **For TripAI**: Obtain your API key from [www.ctrip.com/wendao/openclaw](https://www.ctrip.com/wendao/openclaw). *(Required)*
 
 **Important**: Treat your API keys like passwords. Do not share them publicly or commit them to version control.
 
@@ -77,7 +77,7 @@ cp -r tripai-skill/ ~/.openclaw/workspace/skills/tripai-skill
 export TRIPGENIE_API_KEY="your-tripgenie-key-here"
 ```
 
-**TripAI** (optional — you can skip this and use the skill without a key):
+**TripAI** (required):
 
 ```bash
 export TRIPAI_API_KEY="your-tripai-key-here"
@@ -92,7 +92,7 @@ mkdir -p ~/.config/tripai-skill
 echo "your-tripai-key-here" > ~/.config/tripai-skill/api_key
 ```
 
-The skill checks in order: environment variable → config file. If neither is set, the skill still works but may be subject to rate limiting.
+The skill checks in order: environment variable → config file.
 
 ## Usage Examples
 
@@ -146,9 +146,9 @@ curl -s -X POST https://tripgenie-openclaw-prod.trip.com/openclaw/airline -H "Co
 This triggers the `tripai-skill` skill. An example underlying command:
 
 ```bash
-# Example underlying command for a general query (token is optional)
+# Example underlying command for a general query
 jq -n --arg token "$TRIPAI_API_KEY" --arg query "预订北京三里屯附近的酒店" \
-  'if $token != "" then {token: $token, query: $query, source: "github"} else {query: $query, source: "github"} end' | \
+  '{token: $token, query: $query, source: "github"}' | \
 curl -s -X POST https://wendao-skill-prod.ctrip.com/skill/query -H "Content-Type: application/json" -d @-
 ```
 
