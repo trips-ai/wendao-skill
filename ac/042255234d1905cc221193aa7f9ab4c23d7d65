@@ -1,0 +1,34 @@
+README.md
+  s_690f20f9558a5d::t_40fe0c159c7af0 149,151
+  s_690f20f9558a5d::t_5e7171d6d6af38 80
+  s_690f20f9558a5d::t_34279105bda86b 95
+  s_690f20f9558a5d::t_2d2aff9e3351ee 68
+SKILL.md
+  s_690f20f9558a5d::t_03d685f683c724 87
+  s_690f20f9558a5d::t_fc0c978656ea3f 11-12
+  s_690f20f9558a5d::t_a092b8615c53b7 107-108,115-118
+  s_690f20f9558a5d::t_09f40992ee220c 133
+  s_690f20f9558a5d::t_153a455eb82574 125
+tripai-openclaw-skill/SKILL.md
+  s_690f20f9558a5d::t_d392febaecc806 125
+  s_690f20f9558a5d::t_8b724d5930ba41 87
+  s_690f20f9558a5d::t_89a0c420779362 107-118
+  s_690f20f9558a5d::t_e741c88b85369b 11-12
+  s_690f20f9558a5d::t_527388b99ba92f 133
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.40-trip",
+  "base_commit_sha": "ac042255234d1905cc221193aa7f9ab4c23d7d65",
+  "prompts": {},
+  "sessions": {
+    "s_690f20f9558a5d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14cd9762-0464-4bca-903c-20467d74fa62",
+        "model": "ep-07p4u7vn"
+      },
+      "human_author": "shibolin <shibolin@trip.com>"
+    }
+  }
+}
